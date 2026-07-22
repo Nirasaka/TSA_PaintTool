@@ -2,10 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PaintController : MonoBehaviour,
-    IPointerDownHandler,
-    IDragHandler,
-    IPointerUpHandler
+public class PaintController : MonoBehaviour
 {
     [SerializeField]
     private RawImage img;
@@ -77,8 +74,9 @@ public class PaintController : MonoBehaviour,
         return true;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(BaseEventData data)
     {
+        PointerEventData eventData = (PointerEventData)data;
         if (!ScreenToTexturePosition(eventData.position, out previousPos))
             return;
 
@@ -89,8 +87,9 @@ public class PaintController : MonoBehaviour,
         tex.Apply();
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnDrag(BaseEventData data)
     {
+        PointerEventData eventData = (PointerEventData)data;
         if (!drawing)
             return;
 
@@ -104,7 +103,7 @@ public class PaintController : MonoBehaviour,
         tex.Apply();
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp(BaseEventData data)
     {
         drawing = false;
     }
