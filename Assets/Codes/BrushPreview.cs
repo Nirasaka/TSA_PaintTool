@@ -15,7 +15,7 @@ public class BrushPreview : MonoBehaviour
     private float minDiameter = 8f;
 
     [SerializeField]
-    private float maxDiameter = 50f;
+    private float maxDiameter = 80f;
 
     [SerializeField]
     private int maxBrushSize = 100;

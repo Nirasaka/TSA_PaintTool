@@ -233,5 +233,31 @@ public class PaintCanvas : MonoBehaviour
         texture.Apply();
     }
 
+    public void SetTexture(Texture2D tex)
+    {
+        texture = new Texture2D(
+            tex.width,
+            tex.height,
+            TextureFormat.RGBA32,
+            false);
+
+        texture.SetPixels(tex.GetPixels());
+        texture.Apply();
+
+        rawImage.texture = texture;
+    }
+
+    public bool IsNotPainted()
+    {
+        foreach(Color c in GetPixels())
+        {
+            if(c != backgroundColor)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     #endregion
 }

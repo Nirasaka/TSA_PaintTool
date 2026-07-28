@@ -46,6 +46,7 @@ public class PaintInputController : MonoBehaviour
                 break;
 
             case PaintToolManager.ToolType.Fill:
+                historyManager.AddColor(toolManager.CurrentColor);
 
                 paintCanvas.FloodFill( previousPos, toolManager.CurrentColor);
 
