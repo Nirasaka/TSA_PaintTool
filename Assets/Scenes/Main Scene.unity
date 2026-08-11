@@ -10063,6 +10063,10 @@ MonoBehaviour:
   currentTool: 0
   currentColor: {r: 0, g: 0, b: 0, a: 1}
   brushSize: 4
+  pen: {fileID: 1726111978}
+  filler: {fileID: 58878823}
+  eraser: {fileID: 1098380999}
+  eyedropper: {fileID: 1981693527}
 --- !u!4 &1634889214
 Transform:
   m_ObjectHideFlags: 0
