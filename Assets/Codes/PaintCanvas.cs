@@ -17,6 +17,8 @@ public class PaintCanvas : MonoBehaviour
     public int Width => texture.width;
     public int Height => texture.height;
 
+    private float applyTimer;
+
     private void Awake()
     {
         Rect rect = rawImage.rectTransform.rect;
@@ -33,6 +35,7 @@ public class PaintCanvas : MonoBehaviour
 
         Clear();
     }
+
 
     #region Coordinate
 
@@ -73,7 +76,7 @@ public class PaintCanvas : MonoBehaviour
         if (dist < 1f)
         {
             DrawBrush(from, color, size);
-            texture.Apply();
+            //texture.Apply();
             return;
         }
 
@@ -86,7 +89,7 @@ public class PaintCanvas : MonoBehaviour
             DrawBrush(p, color, size);
         }
 
-        texture.Apply();
+        //texture.Apply();
     }
 
     public void DrawBrush(Vector2 center, Color color, int size)

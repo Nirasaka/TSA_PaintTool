@@ -18,6 +18,22 @@ public class PaintInputController : MonoBehaviour
     private Vector2 previousPos;
     private bool drawing = false;
 
+    private float applyTimer = 0;
+
+    private void Update()
+    {
+        if (drawing)
+        {
+            applyTimer += Time.deltaTime;
+
+            if (applyTimer >= 0.01f)
+            {
+                paintCanvas.Texture.Apply();
+                applyTimer = 0;
+            }
+        }
+    }
+
     public void OnPointerDown(BaseEventData data)
     {
         PointerEventData eventData = data as PointerEventData;
