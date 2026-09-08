@@ -17,22 +17,8 @@ public class PaintCanvas : MonoBehaviour
     public int Width => texture.width;
     public int Height => texture.height;
 
-    private float applyTimer;
-
     private void Awake()
     {
-        Rect rect = rawImage.rectTransform.rect;
-
-        texture = new Texture2D(
-            Mathf.RoundToInt(rect.width),
-            Mathf.RoundToInt(rect.height),
-            TextureFormat.RGBA32,
-            false);
-
-        texture.filterMode = FilterMode.Point;
-
-        rawImage.texture = texture;
-
         Clear();
     }
 
@@ -174,6 +160,24 @@ public class PaintCanvas : MonoBehaviour
 
     public void Clear()
     {
+        if (texture != null)
+        {
+            Destroy(texture);
+            texture = null;
+        }
+
+        Rect rect = rawImage.rectTransform.rect;
+
+        texture = new Texture2D(
+            Mathf.RoundToInt(rect.width),
+            Mathf.RoundToInt(rect.height),
+            TextureFormat.RGBA32,
+            false);
+
+        texture.filterMode = FilterMode.Point;
+
+        rawImage.texture = texture;
+
         Color[] pixels = new Color[texture.width * texture.height];
 
         for (int i = 0; i < pixels.Length; i++)
