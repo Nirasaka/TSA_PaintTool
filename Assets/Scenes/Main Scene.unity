@@ -2272,6 +2272,7 @@ MonoBehaviour:
   toolManager: {fileID: 1634889213}
   undoManager: {fileID: 2041359173}
   historyManager: {fileID: 1905058811}
+  saveLoadImage: {fileID: 2029688987}
 --- !u!1 &184429545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,7 +4163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &747798626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4181,7 +4182,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 42.5, y: -165}
-  m_SizeDelta: {x: 75, y: 50}
+  m_SizeDelta: {x: 75, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747798627
 MonoBehaviour:
@@ -4649,7 +4650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u958B\u304F"
+  m_text: "\u958B\u304F\nLoad"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fda2d804f0c63f142a254aefacf481ae, type: 2}
   m_sharedMaterial: {fileID: -3427492126171265373, guid: fda2d804f0c63f142a254aefacf481ae, type: 2}
@@ -4691,7 +4692,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -52.6
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -8222,7 +8223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1361101702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8241,7 +8242,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -42.5, y: -165}
-  m_SizeDelta: {x: 75, y: 50}
+  m_SizeDelta: {x: 75, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361101703
 MonoBehaviour:
@@ -8394,7 +8395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u4FDD\u5B58"
+  m_text: "\u4FDD\u5B58\nSave"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fda2d804f0c63f142a254aefacf481ae, type: 2}
   m_sharedMaterial: {fileID: -3427492126171265373, guid: fda2d804f0c63f142a254aefacf481ae, type: 2}
@@ -8436,7 +8437,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -52.6
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4

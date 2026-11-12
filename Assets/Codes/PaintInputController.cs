@@ -15,6 +15,9 @@ public class PaintInputController : MonoBehaviour
     [SerializeField]
     private ColorHistoryManager historyManager;
 
+    [SerializeField]
+    private SaveLoadImage saveLoadImage;
+
     private Vector2 previousPos;
     private bool drawing = false;
 
@@ -116,6 +119,7 @@ public class PaintInputController : MonoBehaviour
     public void OnPointerUp(BaseEventData data)
     {
         drawing = false;
+        saveLoadImage.SavePNGSilent("wip.png");
     }
 
     public void ClearCanvas()

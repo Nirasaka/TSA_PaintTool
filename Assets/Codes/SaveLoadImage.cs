@@ -53,9 +53,24 @@ public class SaveLoadImage : MonoBehaviour
         FileBrowser.ShowSaveDialog(OnSaveSuccess, OnCancel, FileBrowser.PickMode.Files, false, folder, filename, "Save the image", "Save");
     }
 
+    public void SavePNG(string filename)
+    {
+        string folder = GetDownloadPath();
+        FileBrowser.ShowSaveDialog(OnSaveSuccess, OnCancel, FileBrowser.PickMode.Files, false, folder, filename, "Save the image", "Save");
+    }
+
+    public void SavePNGSilent(string filename)
+    {
+        string folder = GetDownloadPath();
+        string path = Path.Combine(folder, filename);
+        var png = paintCanvas.GetPNG(false);
+        File.WriteAllBytes(path, png);
+        Debug.Log("âÊëúÇï€ë∂ÅF" + path);
+    }
+
     private void OnSaveSuccess(string[] paths)
     {
-        var png = paintCanvas.GetPNG();
+        var png = paintCanvas.GetPNG(false);
 
         File.WriteAllBytes(paths[0], png);
 

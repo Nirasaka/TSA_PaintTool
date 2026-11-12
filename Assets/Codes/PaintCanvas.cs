@@ -187,21 +187,24 @@ public class PaintCanvas : MonoBehaviour
         texture.Apply();
     }
 
-    public byte[] GetPNG()
+    public byte[] GetPNG(bool IsFill = true)
     {
         Texture2D exportTexture = new Texture2D(
-                                    texture.width, 
-                                    texture.height, 
-                                    TextureFormat.RGBA32, 
+                                    texture.width,
+                                    texture.height,
+                                    TextureFormat.RGBA32,
                                     false);
 
         Color[] pixels = texture.GetPixels();
 
-        for(int i = 0; i < pixels.Length; i++)
+        if (IsFill)
         {
-            if (pixels[i] == backgroundColor)
+            for (int i = 0; i < pixels.Length; i++)
             {
-                pixels[i] = Color.white;
+                if (pixels[i] == backgroundColor)
+                {
+                    pixels[i] = Color.white;
+                }
             }
         }
 
