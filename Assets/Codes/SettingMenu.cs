@@ -128,7 +128,7 @@ public class SettingMenu : MonoBehaviour
 
         form.AddBinaryData(
             "image",
-            paintCanvas.GetPNG(),
+            paintCanvas.GetPNG(false),
             filename,
             "image/png");
 
